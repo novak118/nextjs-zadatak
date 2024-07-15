@@ -10,8 +10,8 @@
   text-align: center;
 }
 .active {
-  background-color: black;
-  color: white;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 .title {
   font-size: 16px;
@@ -47,7 +47,7 @@
 .card {
   width: 460px;
   height: 500px;
-  background-color: white;
+  background-color: var(--background-color);
 }
 .text {
   flex-direction: column;
@@ -64,7 +64,7 @@
 .cardArticle {
   width: 650px;
   height: auto;
-  background-color: rgb(222, 228, 218);
+  background-color: var(--background-color);
 }
 .image {
   margin-left: 25px;
@@ -86,14 +86,14 @@
   list-style: none;
 }
 .code {
-  background-color: #353b3f;
-  color: rgb(255, 255, 255);
+  background-color: var(--background-color);
+  color: var(--text-color);
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 .code:hover {
-  background-color: rgb(222, 228, 218);
-  color: black;
+  background-color: var(--text-color);
+  color: var(--background-color);
 }

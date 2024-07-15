@@ -14,6 +14,11 @@ body {
     Droid Sans,
     Helvetica Neue,
     sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 a {
@@ -25,21 +30,17 @@ a {
   box-sizing: border-box;
 }
 
-body.light {
-  background-color: white;
-  color: black;
-}
-body.dark {
-  background-color: black;
-  color: white;
+:root {
+  --background-color: white;
+  --text-color: black;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+body.light {
+  --background-color: white;
+  --text-color: black;
+}
+
+body.dark {
+  --background-color: black;
+  --text-color: white;
 }
