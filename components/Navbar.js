@@ -5,8 +5,8 @@ import ThemeToggle from '../components/ThemeToggle';
 import styles from '../styles/Home.module.css';
 
 function Navbar() {
-  return (
-    <div className={styles.home}>
+return(
+<div className={styles.home}>
       <Image src="/logo.png" alt="" width={100} height={50} />
       <div className={styles.title}>
         <Link href="/photos/photos" legacyBehavior>
@@ -34,6 +34,6 @@ function Navbar() {
         <ThemeToggle></ThemeToggle>
       </div>
     </div>
-  );
-}
-export default Navbar;
+    );
+    }
+    export default Navbar;
