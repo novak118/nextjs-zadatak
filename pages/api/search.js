@@ -1,35 +1,24 @@
-import Client from "@searchkit/api";
-import { NextRequest, NextResponse } from 'next/server';
- 
-const apiConfig = {
-  connection: {
-    host: "http://localhost:3000/api/articles",
-    // if you are authenticating with an api key
-    // https://www.searchkit.co/docs/guides/setup-elasticsearch#connecting-with-api-key
-    // apiKey: '###'
-    // if you are authenticating with a username/password combo
-    // https://www.searchkit.co/docs/guides/setup-elasticsearch#connecting-with-usernamepassword
-    // auth: {
-    //   username: "elastic",
-    //   password: "changeme"
-    // },
-  },
-  search_settings: {
-    highlight_attributes: ["title", "actors"],
-    search_attributes: ["title", "actors"],
-    result_attributes: ["title", "actors"],
-    facet_attributes: ["type", "rated"],
-  },
+// pages/api/search.js
+
+export default async (req, res) => {
+  const { query } = req.query;
+
+  // Replace this with your actual data fetching logic
+  const articles = [
+    {
+      title: 'Design Trend Report: Jazz Style',
+      description: 'Description of the first article',
+    },
+    {
+      title: 'Second Article',
+      description: 'Description of the second article',
+    },
+    { title: 'Third Article', description: 'Description of the third article' },
+  ];
+
+  const filteredArticles = articles.filter((article) =>
+    article.title.toLowerCase().includes(query.toLowerCase()),
+  );
+
+  res.status(200).json(filteredArticles);
 };
- 
-const apiClient = Client(apiConfig);
- 
-export async function POST(req, res) {
-  try {
-    const data = await req.json();
-    const results = await apiClient.handleRequest(data);
-    return res.json(results);
-  } catch (error) {
-    return res.status(500).json({ error: error.message });
-  }
-}
