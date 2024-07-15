@@ -12,7 +12,6 @@ function Category({ articles }) {
     return <div>Loading..</div>;
   }
 
- 
   const articlesContent = (
     <>
       <div className={styles.cardArticle}>
@@ -49,12 +48,7 @@ function Category({ articles }) {
       </button>
     </>
   );
-  return (
-    <Layout
-      articles={articlesContent}
-      footer={footer}
-    />
-  );
+  return <Layout articles={articlesContent} footer={footer} />;
 }
 export async function getStaticPaths() {
   const res = await fetch('http://localhost:3000/api/articles');

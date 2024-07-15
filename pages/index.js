@@ -5,7 +5,6 @@ import Link from 'next/Link';
 import { getImageSrc } from '../utils/getImageSrc';
 
 function Home({ articles }) {
-
   const articlesContent = articles.map((article) => (
     <>
       <div className={styles.card}>
@@ -39,12 +38,7 @@ function Home({ articles }) {
     </div>
   );
 
-  return (
-    <Layout
-      articles={articlesContent}
-      footer={footer}
-    />
-  );
+  return <Layout articles={articlesContent} footer={footer} />;
 }
 
 export async function getStaticProps() {

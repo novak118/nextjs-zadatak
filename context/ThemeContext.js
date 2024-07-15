@@ -7,7 +7,10 @@ export function ThemeProvider({ children }) {
 
   useEffect(() => {
     // Postavljanje početne teme na osnovu preferencija sistema
-    const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    const systemPreference = window.matchMedia('(prefers-color-scheme: dark)')
+      .matches
+      ? 'dark'
+      : 'light';
     setTheme(systemPreference);
 
     // Promjena teme na osnovu promjene preferencija sistema
@@ -24,7 +27,7 @@ export function ThemeProvider({ children }) {
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
   return (

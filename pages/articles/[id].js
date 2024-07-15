@@ -10,8 +10,6 @@ function Article({ article }) {
     return <div>"loading..."</div>;
   }
 
- 
-
   const content = (
     <div className={styles.cardArticle}>
       <article>
@@ -36,12 +34,7 @@ function Article({ article }) {
       </button>
     </div>
   );
-  return (
-    <Layout
-      articles={content}
-      footer={footer}
-    ></Layout>
-  );
+  return <Layout articles={content} footer={footer}></Layout>;
 }
 
 export async function getStaticPaths() {
