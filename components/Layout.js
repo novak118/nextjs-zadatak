@@ -9,9 +9,13 @@ function Layout({ header, footer, articles, blog }) {
       <Head>
         <title>Creative Market</title>
       </Head>
-      <header className={styles.header}><Navbar/></header>
+      <header className={styles.header}>
+        <Navbar />
+      </header>
       <main>
-        <section className={styles.blog}><Blog/></section>
+        <section className={styles.blog}>
+          <Blog />
+        </section>
         <section className={styles.articles}>{articles}</section>
         <section className={styles.footer}>{footer}</section>
       </main>
