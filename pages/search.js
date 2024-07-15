@@ -21,7 +21,7 @@ const SearchResults = () => {
   }, [query]);
   const header = (
     <div className={styles.home}>
-      <Image src="/logo.png" width={100} height={50} />
+      <Image alt="logo" src="/logo.png" width={100} height={50} />
       <div className={styles.title}>
         <Link href="/photos/photos" legacyBehavior>
           <a>Photos</a>
@@ -82,7 +82,9 @@ const SearchResults = () => {
   );
   const articlesContent = (
     <>
-      <h1>Search Results for "{query}"</h1>
+      <h1>
+        Search Results for <span>{query}</span>
+      </h1>
       {articles.length > 0 ? (
         <ul>
           {articles.map((article, index) => (
